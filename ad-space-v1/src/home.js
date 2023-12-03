@@ -1,6 +1,7 @@
 import {useEffect, React, useState} from "react"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {webApp, youtube, baseParams, googleAuth} from './api/axiosConfig';
+import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 
 const Home = (props) => {
     const { loggedIn, username } = props
@@ -43,47 +44,46 @@ const Home = (props) => {
     const onLoginButtonClick = () => {
         if (loggedIn) {
             props.setLoggedIn(false);
-            navigate("/");
-        } else {
-            navigate("/login")
         }
     }
 
-    const onSignUpButtonClick = () => {
-        navigate("/signup")
-    }
-
-    return <div className="mainContainer">
-        
-        <div className={"titleContainer"}>
-            <div>TITLE</div>
+    return <div className = "homeParent">
+    <div className="sideBarContainer">
+            <Sidebar>
+            <Menu
+                menuItemStyles={{
+                    button: {
+                        
+                    },
+                }}
+            >     
+                <div>TITLE</div>
+                {(loggedIn ?
+                <div>
+                    <MenuItem component={<Link to="/" onClick= {onLoginButtonClick}/>}>Log out</MenuItem>
+                </div>:
+                <div>
+                    <MenuItem component={<Link to="/login" onClick= {onLoginButtonClick}/>}>Log in</MenuItem>
+                    <MenuItem component={<Link to="/signup" />}>Sign Up</MenuItem>
+                </div>
+                )}
+            </Menu>
+            </Sidebar>
         </div>
-        <div className={"buttonContainer"}>
+        <div className="mainContainer">
+        {(loggedIn ? 
+        <div> 
+            <div className={"buttonContainer"}>
             <input
                 className={"inputButton"}
                 type="button"
-                onClick={onLoginButtonClick}
-                value={loggedIn ? "Log out" : "Log in"} />
-            {(loggedIn ? <div> 
-                <div className={"buttonContainer"}>
-                <input
-                    className={"inputButton"}
-                    type="button"
-                    onClick={onYoutubeButtonClick}
-                    value= "Add Youtube" />
-                </div>
-                username: {username}
-            </div> : 
-            <div className={"buttonContainer"}>
-                <input
-                    className={"inputButton"}
-                    type="button"
-                    onClick={onSignUpButtonClick}
-                    value= "Sign Up" />
-            </div>)}
+                onClick={onYoutubeButtonClick}
+                value= "Add Youtube" />
+            </div>
+            username: {username}
         </div>
-
-
+        : <div></div>)};
+        </div>
     </div>
 }
 

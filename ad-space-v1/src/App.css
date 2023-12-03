@@ -1,101 +1,86 @@
 .App {
   text-align: center;
+  font-family:"playfair display", serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loginContainer {
+  background-color: rgba(253, 252, 252, 0.8);
+  backdrop-filter: blur(3px);
+  color: #776363;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow:  0 0 10px 0.2em rgba(0,0,0,.41), 0 0 10px 0.5em rgba(0,0,0,.4);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mainContainer {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("floral_background.jpg");
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  font-size: 64px;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  padding:40px;
+}
+
+.resultContainer, .historyItem { 
+  flex-direction: row;
+  display: flex;
+  width: 400px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.historyContainer {
+  flex-direction: column;
+  display: flex;
+  height: 200px;
+  align-items: center;
+  flex-grow: 5;
+  justify-content: flex-start;
+}
+
+.buttonContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputContainer > .errorLabel {
+  color: red;
+  font-size: 12px;
 }
-  .mainContainer {
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-image: url("floral_background.jpg");
-  }
-  
-  .titleContainer {
-    display: flex;
-    flex-direction: column;
-    font-size: 64px;
-    font-weight: bolder;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .resultContainer, .historyItem { 
-    flex-direction: row;
-    display: flex;
-    width: 400px;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .historyContainer {
-    flex-direction: column;
-    display: flex;
-    height: 200px;
-    align-items: center;
-    flex-grow: 5;
-    justify-content: flex-start;
-  }
-  
-  .buttonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-  }
-  
-  .inputContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  
-  .inputContainer > .errorLabel {
-    color: red;
-    font-size: 12px;
-  }
-  
-  .inputBox {
-    height: 48px;
-    width: 400px;
-    font-size: large;
-    border-radius: 8px;
-    border: 1px solid grey;
-    padding-left: 8px;
-  }
+
+.inputBox {
+  height: 48px;
+  width: 400px;
+  font-size: large;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: 0 0 5px 0.01em rgba(121, 117, 117, 0.4);
+  padding-left: 10px;
+}
+.inputBox:focus {
+  border: 2px solid #6c5b5b;
+  outline:none;
+}

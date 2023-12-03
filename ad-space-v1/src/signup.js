@@ -60,6 +60,7 @@ const SignUp = (props) => {
     }
 
     return <div className={"mainContainer"}>
+        <div className = {"loginContainer"}>
         <div className={"titleContainer"}>
             <div>Sign Up</div>
         </div>
@@ -97,6 +98,7 @@ const SignUp = (props) => {
                 type="button"
                 onClick={onButtonClick}
                 value={"Sign Up"} />
+        </div>
         </div>
     </div>
 }

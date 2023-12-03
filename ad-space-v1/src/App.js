@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './login';
 import Home from './home';
 import SignUp from './signup';
-import api from './api/axiosConfig';
 import React from 'react';
 import {useState, useEffect} from 'react'
 
