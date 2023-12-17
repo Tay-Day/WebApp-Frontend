@@ -2,6 +2,8 @@
 
 This project is the top layer of a mongodb, java/springboot webApp. The backend can be found here: https://github.com/Tay-Day/MyAdSpace-WebApp
 
+<img width="398" alt="image" src="https://github.com/Tay-Day/WebApp-Frontend/assets/89946561/c135961e-37bb-4780-b281-dea9ab016fd4">
+
 First, to run the backend we must fill in the credentials in a .env (environment variables) file in order to connect the backend to a mongoDB. Create a mongoDB using atlas, test the connection using compass and then copy the necessary credentials into an environment file like below. This will be in the gitignore, and used in the application.properties file. 
 ### MONGO_DATABASE="____________" ### 
 
@@ -26,3 +28,9 @@ const webApp = axios.create({ </br>
 }); </br>
 
 Next we can run our frontend using the command "npm start". If all works well you can signup a user, and login to a user. This code has a built in API call to youtube with a button, the key in the code has been changed, but you can register this app with google and get yourself another API key.
+
+<img width="716" alt="image" src="https://github.com/Tay-Day/WebApp-Frontend/assets/89946561/6a6063aa-1af8-4202-9ce3-52642edf6bb6">
+
+
+
+
