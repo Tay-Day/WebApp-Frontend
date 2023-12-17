@@ -4,7 +4,7 @@ const webApp = axios.create({
     baseURL: 'https://2986-2601-644-400-940-6835-da63-4d97-dc93.ngrok-free.app',
     headers: {"ngrok-skip-browser-warning": "true"}
 });
-const KEY = "AIzaSyBncD-I8pBdNzKXY2-SvuZFTKN1Pe_9ZzU";
+const KEY = "";
 
 //THIS DIDN'T WORK BECAUSE CORS
 const googleAuth = axios.create({
